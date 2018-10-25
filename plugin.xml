@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com-zendrive-plugin-sdk" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>ZendriveFinalPlugin</name>
+    <js-module name="ZendriveFinalPlugin" src="www/ZendriveFinalPlugin.js">
+        <clobbers target="zendrivefinalplugin" />
+    </js-module>
+    <platform name="ios">
+  		<config-file target="config.xml" parent="/*">
+    	<feature name="ZendriveFinalPlugin">
+      		<param name="ios-package" value="ZendriveFinalPlugin" />
+    	</feature>
+  		</config-file>
+  		<source-file src="src/ios/ZendriveFinalPlugin.swift" />
+	</platform>
+</plugin>
