@@ -24,9 +24,6 @@ import ZendriveSDK.Insurance
             if (error == nil) {
                 pluginResult = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: "Zendrive successfully setup!")
                 print("Zendrive is setup.")
-                //var error: NSError? = nil
-                //ZendriveInsurance.startDrive(withPeriod2: self.trackingID, error: &error)
-                //print("start drive call didn't break everything.")
             }
             else {
                 pluginResult = CDVPluginResult.init(status: CDVCommandStatus_ERROR, messageAs: error?.localizedDescription)
@@ -67,9 +64,6 @@ import ZendriveSDK.Insurance
         if (error == nil) {
             pluginResult = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: "Zendrive successfully started period 2!")
             print("Zendrive started period 2.")
-            //var error: NSError? = nil
-            //ZendriveInsurance.startDrive(withPeriod2: self.trackingID, error: &error)
-            //print("start drive call didn't break everything.")
         }
         else {
             pluginResult = CDVPluginResult.init(status: CDVCommandStatus_ERROR, messageAs: error?.localizedDescription)
@@ -85,9 +79,6 @@ import ZendriveSDK.Insurance
         if (error == nil) {
             pluginResult = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: "Zendrive successfully started period 3!")
             print("Zendrive started period 3.")
-            //var error: NSError? = nil
-            //ZendriveInsurance.startDrive(withPeriod2: self.trackingID, error: &error)
-            //print("start drive call didn't break everything.")
         }
         else {
             pluginResult = CDVPluginResult.init(status: CDVCommandStatus_ERROR, messageAs: error?.localizedDescription)
@@ -103,9 +94,6 @@ import ZendriveSDK.Insurance
         if (error == nil) {
             pluginResult = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: "Zendrive successfully stopped period!")
             print("Zendrive stopped period.")
-            //var error: NSError? = nil
-            //ZendriveInsurance.startDrive(withPeriod2: self.trackingID, error: &error)
-            //print("start drive call didn't break everything.")
         }
         else {
             pluginResult = CDVPluginResult.init(status: CDVCommandStatus_ERROR, messageAs: error?.localizedDescription)
