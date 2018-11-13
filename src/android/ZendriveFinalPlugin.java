@@ -23,7 +23,7 @@ public class ZendriveFinalPlugin extends CordovaPlugin {
 	public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) {
 		if(action.equals("setup")) {
 			this.context = cordova.getActivity().getApplicationContext();
-			ZendriveConfiguration configuration = new ZendriveConfiguration("6ylBI0yLVuPUADaB6FxlrbeUkSAQ3vK8", "test_id", ZendriveDriveDetectionMode.AUTO_OFF);
+			ZendriveConfiguration configuration = new ZendriveConfiguration("sdk-key", "test-id", ZendriveDriveDetectionMode.AUTO_OFF);
 			Log.d("debug_msg","In setup function.");
 			Zendrive.setup(
 					this.context,
