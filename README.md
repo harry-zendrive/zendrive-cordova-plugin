@@ -52,3 +52,6 @@ Basic Cordova plugin that wraps around Zendrive API function calls.
 
 ## Platforms currently testing
 - iOS (Swift)
+
+## Features to be added for iOS
+- Callbacks (iOS)
