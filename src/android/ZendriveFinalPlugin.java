@@ -23,6 +23,9 @@ public class ZendriveFinalPlugin extends CordovaPlugin {
 		if(action.equals("setup")) {
 			this.context = cordova.getActivity().getApplicationContext();
 			ZendriveConfiguration configuration = new ZendriveConfiguration("sdk-key-here", "test_id", ZendriveDriveDetectionMode.AUTO_OFF); //AUTO_ON if implementing period 1 insurance period as well
+=======
+			ZendriveConfiguration configuration = new ZendriveConfiguration("sdk-key", "test-id", ZendriveDriveDetectionMode.AUTO_OFF);
+>>>>>>> 9ff5192092b196afa17e98ce02cdb30757d0ceee
 			Log.d("debug_msg","In setup function.");
 			Zendrive.setup(
 					this.context,
