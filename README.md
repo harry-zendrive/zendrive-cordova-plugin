@@ -29,7 +29,7 @@ Basic Cordova plugin that wraps around Zendrive API function calls.
     } 
    }  
    ```
-**iOS - in top project level:**
+**iOS - in Cordova top project level:**
 - Add Cocoapods plugin: ``cordova plugin add cordova-plugin-cocoapod-support --save``
 - Put following lines under ``<platform name="ios">`` in config.xml:
    ```
