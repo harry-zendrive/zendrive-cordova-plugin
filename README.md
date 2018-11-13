@@ -35,7 +35,7 @@ Basic Cordova plugin that wraps around Zendrive API function calls.
    ```
    <preference name="pods_ios_min_version" value="8.0" />
    <preference name="pods_use_frameworks" value="true" />
-   <pod name="ZendriveSDK" git="https://bitbucket.org/zendrive-root/zendrive_cocoapod.git" tag="5.6.0" />   
+   <pod name="ZendriveSDK" git="https://bitbucket.org/zendrive-root/zendrive_cocoapod.git" tag="5.5.0" />   
    ```
 - Add the Swift support plugin: ``cordova plugin add cordova-plugin-add-swift-support --save``
 4. Build both platforms to ensure that there's no errors:
@@ -48,10 +48,11 @@ Basic Cordova plugin that wraps around Zendrive API function calls.
 8. Any other development changes you can make directly in the respective platforms directory, otherwise you'll have to uninstall and reinstall the plugin again.
 
 ## Platforms in development
-- Android
 
 ## Platforms currently testing
 - iOS (Swift)
+- Android
 
 ## Features to be added for iOS
 - Callbacks (iOS)
+- Callbacks (Android)
