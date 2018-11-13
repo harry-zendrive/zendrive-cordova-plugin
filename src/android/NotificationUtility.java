@@ -3,58 +3,53 @@ package com.zendrive.cordova.plugin;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v4.app.NotificationCompat;
 
+//make sure to import your own R.drawable class
+
 public class NotificationUtility {
     private static final String FOREGROUND_CHANNEL_KEY = "Foreground";
-    static int FOREGROUND_MODE_NOTIFICATION_ID = 1;
     private static final String ISSUES_CHANNEL_KEY = "Issues";
-    public static int ZENDRIVE_FAILED_NOTIFICATION_ID = 4;
 
-    static Notification getMaybeInDriveNotificationContainer(@NonNull Context context) {
+    static Notification getMaybeInDriveNotification(@NonNull Context context) {
+        createNotificationChannels(context);
+        return new NotificationCompat.Builder(context, FOREGROUND_CHANNEL_KEY)
+                .setSmallIcon(R.drawable.common_google_signin_btn_icon_dark)
+                .setContentTitle("Zendrive")
+                .setCategory(NotificationCompat.CATEGORY_SERVICE)
+                .setContentText("Detecting possible drive.").build();
+    }
+
+    static Notification getInDriveNotification(@NonNull Context context) {
+        createNotificationChannels(context);
+        return new NotificationCompat.Builder(context, FOREGROUND_CHANNEL_KEY)
+                .setSmallIcon(R.drawable.common_google_signin_btn_icon_dark)
+                .setContentTitle("Zendrive")
+                .setCategory(NotificationCompat.CATEGORY_SERVICE)
+                .setContentText("Drive Active.").build();
+    }
+
+    private static void createNotificationChannels(Context context) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            return new NotificationCompat.Builder(context, FOREGROUND_CHANNEL_KEY)
-                    .setSmallIcon(android.support.v4.R.drawable.notification_icon_background)
-                    .setContentTitle("Zendrive")
-                    .setDefaults(0)
-                    .setPriority(2)
-                    .setCategory(Notification.CATEGORY_SERVICE)
-                    .setChannelId(FOREGROUND_CHANNEL_KEY)
-                    .setContentText("Detecting Possible Drive.").build();
+            NotificationManager manager = context.getSystemService(NotificationManager.class);
+
+            NotificationChannel foregroundNotificationChannel = new NotificationChannel
+                    (FOREGROUND_CHANNEL_KEY, "Zendrive trip tracking",
+                            NotificationManager.IMPORTANCE_DEFAULT);
+            foregroundNotificationChannel.setShowBadge(false);
+
+            NotificationChannel issuesNotificationChannel = new NotificationChannel
+                    (ISSUES_CHANNEL_KEY, "Issues",
+                            NotificationManager.IMPORTANCE_DEFAULT);
+            issuesNotificationChannel.setShowBadge(true);
+
+            if (manager != null) {
+                manager.createNotificationChannel(foregroundNotificationChannel);
+                manager.createNotificationChannel(issuesNotificationChannel);
+            }
         }
-
-        return new NotificationCompat.Builder(context, FOREGROUND_CHANNEL_KEY)
-                .setSmallIcon(android.support.v4.R.drawable.notification_icon_background)
-                .setContentTitle("Zendrive")
-                .setContentText("Detecting Possible Drive.")
-                .build();
     }
-
-    static Notification getInDriveNotificationContainer(@NonNull Context context) {
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
-            return new NotificationCompat.Builder(context, FOREGROUND_CHANNEL_KEY)
-                    .setSmallIcon(android.support.v4.R.drawable.notification_icon_background)
-                    .setContentTitle("Zendrive")
-                    .setCategory(Notification.CATEGORY_SERVICE)
-                    .setChannelId(FOREGROUND_CHANNEL_KEY)
-                    .setContentText("Drive Active.").build();
-        }
-
-        return new NotificationCompat.Builder(context, FOREGROUND_CHANNEL_KEY)
-                .setSmallIcon(android.support.v4.R.drawable.notification_icon_background)
-                .setContentTitle("Zendrive")
-                .setContentText("Drive Active.")
-                .build();
-
-    }
-
-
 }
