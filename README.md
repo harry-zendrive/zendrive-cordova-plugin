@@ -56,6 +56,8 @@ Basic Cordova plugin that wraps around Zendrive API function calls.
   * Privacy - Location Always Usage Description
   * Privacy - Location Always And When In Use Usage Description
   * Privacy - Privacy - Location When In Use Usage Description
+  
+*Note: When building for iOS in Xcode 10, you will have to adjust your Workspace Settings to allow for Legacy Build settings. Go to: File -> Workspace Settings... -> Build System -> Legacy Build System*
 
 ## Platforms in development
 
