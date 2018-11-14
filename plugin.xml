@@ -19,5 +19,7 @@
       </feature>
       </config-file>
       <source-file src="src/android/ZendriveFinalPlugin.java" target-dir="src/com/zendrive/cordova/plugin" />
+      <source-file src="src/android/SDKNotificationProvider.java" target-dir="src/com/zendrive/cordova/plugin" />
+      <source-file src="src/android/NotificationUtility.java" target-dir="src/com/zendrive/cordova/plugin" />
     </platform>
 </plugin>
