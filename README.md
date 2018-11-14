@@ -53,9 +53,9 @@ Basic Cordova plugin that wraps around Zendrive API function calls.
 - Background Modes -> ON
 - Enable Location Updates
 - Add Location Permission Keys: 
-..* Privacy - Location Always Usage Description
-..* Privacy - Location Always And When In Use Usage Description
-..* Privacy - Privacy - Location When In Use Usage Description
+  * Privacy - Location Always Usage Description
+  * Privacy - Location Always And When In Use Usage Description
+  * Privacy - Privacy - Location When In Use Usage Description
 
 ## Platforms in development
 
