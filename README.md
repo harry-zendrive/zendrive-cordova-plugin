@@ -42,11 +42,12 @@ Basic Cordova plugin that wraps around Zendrive API function calls.
 ``cordova build android``
 ``cordova build ios``
 5. Download this plugin to a new folder in the top level of your project. You can call it "ZendriveFinalPlugin".
-6. Then add the plugin to your Cordova project:
+6. Replace the SDK Key in ZendriveFinalPlugin.swift and ZendriveFinalPlugin.java with your Zendrive SDK Key located in your account. 
+7. Then add the plugin to your Cordova project:
 ``cordova plugin add {top_level_project_dir/ZendriveFinalPlugin} --save``
-7. If you're using iOS, the bridging header to Objective C should already have been added for you.
-8. Make sure to reference the functions in your index.js and index.html portions of the Cordova project.
-9. Any other development changes you can make directly in the respective platforms directory, otherwise you'll have to uninstall and reinstall the plugin again.
+8. If you're using iOS, the bridging header to Objective C should already have been added for you.
+9. Make sure to reference the functions in your index.js and index.html portions of the Cordova project.
+10. Any other development changes you can make directly in the respective platforms directory, otherwise you'll have to uninstall and reinstall the plugin again.
 
 **iOS - in XCode:**
 - Background Modes -> ON
