@@ -49,6 +49,10 @@ Basic Cordova plugin that wraps around Zendrive API function calls.
 9. Make sure to reference the functions in your index.js and index.html portions of the Cordova project.
 10. Any other development changes you can make directly in the respective platforms directory, otherwise you'll have to uninstall and reinstall the plugin again.
 
+**Android - in Android Studio:**
+- Make sure to import your own R class within the NotificationUtility.java class.
+  * Ex: ``import com.companyname.projectname.R``
+
 **iOS - in XCode:**
 - Background Modes -> ON
 - Enable Location Updates
