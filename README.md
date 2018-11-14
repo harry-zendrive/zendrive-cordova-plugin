@@ -48,6 +48,14 @@ Basic Cordova plugin that wraps around Zendrive API function calls.
 8. Make sure to reference the functions in your index.js and index.html portions of the Cordova project.
 9. Any other development changes you can make directly in the respective platforms directory, otherwise you'll have to uninstall and reinstall the plugin again.
 
+**iOS - in XCode:**
+- Background Modes -> ON
+- Enable Location Updates
+- Add Location Permission Keys: 
+..* Privacy - Location Always Usage Description
+..* Privacy - Location Always And When In Use Usage Description
+..* Privacy - Privacy - Location When In Use Usage Description
+
 ## Platforms in development
 
 ## Platforms currently testing
