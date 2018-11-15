@@ -46,7 +46,7 @@ Basic Cordova plugin that wraps around Zendrive API function calls.
 ``cordova build android``
 ``cordova build ios``
 5. Download this plugin to a new folder in the top level of your project. You can call it "ZendriveFinalPlugin".
-6. Replace the SDK Key in ZendriveFinalPlugin.swift and ZendriveFinalPlugin.java with your Zendrive SDK Key located in your account. 
+6. Replace the SDK Key in ``ZendriveFinalPlugin/src/ios/ZendriveFinalPlugin.swift`` and ``ZendriveFinalPlugin/src/android/ZendriveFinalPlugin.java`` with your Zendrive SDK Key located in your account. 
 7. Then add the plugin to your Cordova project:
 ``cordova plugin add {top_level_project_dir/ZendriveFinalPlugin} --save``
 8. If you're using iOS, the bridging header to Objective C should already have been added for you.
