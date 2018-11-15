@@ -50,7 +50,7 @@ Basic Cordova plugin that wraps around Zendrive API function calls.
 7. Then add the plugin to your Cordova project:
 ``cordova plugin add {top_level_project_dir/ZendriveFinalPlugin} --save``
 8. If you're using iOS, the bridging header to Objective C should already have been added for you.
-9. Make sure to reference the functions in your index.js and index.html portions of the Cordova project.
+**9. Make sure to reference the functions in your index.js and index.html portions of the Cordova project.**
 10. Any other development changes you can make directly in the respective platforms directory, otherwise you'll have to uninstall and reinstall the plugin again.
 
 **Android - in Android Studio:**
