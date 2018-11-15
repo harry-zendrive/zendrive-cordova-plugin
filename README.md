@@ -54,14 +54,19 @@ Basic Cordova plugin that wraps around Zendrive API function calls.
   * Ex: ``import com.companyname.projectname.R``
 
 **iOS - in XCode:**
-- Background Modes -> ON
-- Enable Location Updates
-- Add Location Permission Keys: 
+- Top Level Project -> Capabilities -> Background Modes -> ON
+- Enable Location Updates under Background Modes
+- Add Location Permission Keys in Info: 
   * Privacy - Location Always Usage Description
+    * Add permissions explanation for the string field.
   * Privacy - Location Always And When In Use Usage Description
+    * Add permissions explanation for the string field.
   * Privacy - Privacy - Location When In Use Usage Description
+    * Add permissions explanation for the string field.
   
 *Note: When building for iOS in Xcode 10, you will have to adjust your Workspace Settings to allow for Legacy Build settings. Go to: File -> Workspace Settings... -> Build System -> Legacy Build System*
+
+**Feel free to build and test both projects at this point!**
 
 ## Platforms in development
 
