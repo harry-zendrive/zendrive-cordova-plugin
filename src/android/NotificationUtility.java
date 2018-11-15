@@ -8,7 +8,7 @@ import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v4.app.NotificationCompat;
 
-//make sure to import your own R.drawable class
+//make sure to import your own R class
 
 public class NotificationUtility {
     private static final String FOREGROUND_CHANNEL_KEY = "Foreground";
