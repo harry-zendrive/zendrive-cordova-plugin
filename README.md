@@ -1,6 +1,10 @@
 # zendrive-cordova-plugin
 Basic Cordova plugin that wraps around Zendrive API function calls.
 
+## Prerequisites
+- Android Studio
+- Xcode 10
+
 ## How to use the plugin
 1. Have a valid Cordova project or create a project:
 ``cordova create <dir_name> <company_name> <project_name>``
