@@ -1,0 +1,19 @@
+// Below was already found in the android project gradle. May not need it added.
+// repositories {
+//   jcenter()
+// }
+
+dependencies {
+  compile "com.zendrive.sdk.android:ZendriveSDK:5.5.2"
+}
+
+android {
+  lintOptions {
+    // This is needed to avoid spurious lint errors from libthrift and log4j.
+    disable 'InvalidPackage'
+  }
+  packagingOptions {
+    exclude 'META-INF/LICENSE.txt'
+    exclude 'META-INF/NOTICE.txt'
+  }
+}
