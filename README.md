@@ -13,25 +13,11 @@ Basic Cordova plugin that wraps around Zendrive API function calls.
 ``cordova platform add ios``
 3. Source the dependencies for Zendrive SDK:
 
-**Android - add to build.gradle in /platforms/android/app:**
+**Android - modify /src/android/dependencies.gradle if missing jcenter in the project /platforms/android/appbuild.gradle:**
   ```
-  repositories { 
+  repositories {
     jcenter()
   }
-  dependencies {
-    compile 'com.zendrive.sdk.android:ZendriveSDK:5.5.2'
-  }
-  
-  android { 
-    lintOptions {
-      // This is needed to avoid spurious lint errors from libthrift and log4j.
-      disable 'InvalidPackage' 
-    }
-    packagingOptions {
-      exclude 'META-INF/LICENSE.txt' 
-      exclude 'META-INF/NOTICE.txt'
-    } 
-   }  
    ```
 **iOS - in Cordova top project level:**
 - Add Cocoapods plugin: ``cordova plugin add cordova-plugin-cocoapod-support --save``
@@ -46,7 +32,7 @@ Basic Cordova plugin that wraps around Zendrive API function calls.
 ``cordova build android``
 ``cordova build ios``
 5. Download this plugin to a new folder in the top level of your project. You can call it "ZendriveFinalPlugin".
-6. Replace the SDK Key in ``ZendriveFinalPlugin/src/ios/ZendriveFinalPlugin.swift`` and ``ZendriveFinalPlugin/src/android/ZendriveFinalPlugin.java`` with your Zendrive SDK Key located in your account. 
+6. Replace the SDK Key in ``ZendriveFinalPlugin/src/ios/ZendriveFinalPlugin.swift`` and ``ZendriveFinalPlugin/src/android/ZendriveFinalPlugin.java`` with your Zendrive SDK Key located in your account.
 7. Then add the plugin to your Cordova project:
 ``cordova plugin add {top_level_project_dir/ZendriveFinalPlugin} --save``
 8. If you're using iOS, the bridging header to Objective C should already have been added for you.
@@ -60,17 +46,44 @@ Basic Cordova plugin that wraps around Zendrive API function calls.
 **iOS - in XCode:**
 - Top Level Project -> Capabilities -> Background Modes -> ON
 - Enable Location Updates under Background Modes
-- Add Location Permission Keys in Info: 
+- Add Location Permission Keys in Info:
   * Privacy - Location Always Usage Description
     * Add permissions explanation for the string field.
   * Privacy - Location Always And When In Use Usage Description
     * Add permissions explanation for the string field.
   * Privacy - Privacy - Location When In Use Usage Description
     * Add permissions explanation for the string field.
-  
+
 *Note: When building for iOS in Xcode 10, you will have to adjust your Workspace Settings to allow for Legacy Build settings. Go to: File -> Workspace Settings... -> Build System -> Legacy Build System*
 
 **Feel free to build and test both projects at this point!**
+
+## Usage in Ionic 2+ (TypeScript)
+1. Reference the clobbers name ``ZendriveFinalPlugin`` after imports and above @Component
+
+  ```
+  ...
+  import { GlobalProvider } from "../../providers/global/global";
+
+  declare var ZendriveFinalPlugin:any;
+
+  @Component({
+    selector: 'page-home',
+    templateUrl: 'home.html'
+  })
+  export class HomePage {
+  ...
+  ```
+2. Use the clobbers name to call methods once the device is ready
+  ```
+  this.platform.ready().then(() => {
+    ZendriveFinalPlugin.setup(
+      'Some argument',
+      function(msg) { alert(msg); },
+      function(err) { alert(err); }
+   );
+  });
+  ```
 
 ## Platforms in development
 
