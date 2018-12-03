@@ -59,10 +59,11 @@ Basic Cordova plugin that wraps around Zendrive API function calls.
 **Feel free to build and test both projects at this point!**
 
 ## Usage in Ionic 2+ (TypeScript)
-1. Reference the clobbers name ``ZendriveFinalPlugin`` after imports and above @Component
+1. Reference the clobbers name ``ZendriveFinalPlugin`` after imports and above @Component (clobbers name chan ge changed in plugin.xml)
 
   ```
   ...
+
   import { GlobalProvider } from "../../providers/global/global";
 
   declare var ZendriveFinalPlugin:any;
@@ -72,6 +73,7 @@ Basic Cordova plugin that wraps around Zendrive API function calls.
     templateUrl: 'home.html'
   })
   export class HomePage {
+
   ...
   ```
 2. Use the clobbers name to call methods once the device is ready
