@@ -1,25 +1,26 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="com-zendrive-plugin-sdk" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
-    <name>ZendriveFinalPlugin</name>
-    <js-module name="ZendriveFinalPlugin" src="www/ZendriveFinalPlugin.js">
-        <clobbers target="zendrivefinalplugin" />
-    </js-module>
-    <platform name="ios">
-  		<config-file target="config.xml" parent="/*">
-    	<feature name="ZendriveFinalPlugin">
-      		<param name="ios-package" value="ZendriveFinalPlugin" />
-    	</feature>
-  		</config-file>
-  		<source-file src="src/ios/ZendriveFinalPlugin.swift" />
-	</platform>
+<plugin id="com-zendrive-plugin-sdk" version="0.0.2" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+  <name>ZendriveFinalPlugin</name>
+  <js-module name="ZendriveFinalPlugin" src="www/ZendriveFinalPlugin.js">
+    <clobbers target="ZendriveFinalPlugin" />
+  </js-module>
+  <platform name="ios">
+		<config-file target="config.xml" parent="/*">
+  	<feature name="ZendriveFinalPlugin">
+    	<param name="ios-package" value="ZendriveFinalPlugin" />
+  	</feature>
+		</config-file>
+		<source-file src="src/ios/ZendriveFinalPlugin.swift" />
+  </platform>
   <platform name="android">
-      <config-file target="config.xml" parent="/*">
-      <feature name="ZendriveFinalPlugin">
-        <param name="android-package" value="com.zendrive.cordova.plugin.ZendriveFinalPlugin" />
-      </feature>
-      </config-file>
-      <source-file src="src/android/ZendriveFinalPlugin.java" target-dir="src/com/zendrive/cordova/plugin" />
-      <source-file src="src/android/SDKNotificationProvider.java" target-dir="src/com/zendrive/cordova/plugin" />
-      <source-file src="src/android/NotificationUtility.java" target-dir="src/com/zendrive/cordova/plugin" />
-    </platform>
+    <config-file target="config.xml" parent="/*">
+    <feature name="ZendriveFinalPlugin">
+      <param name="android-package" value="com.zendrive.cordova.plugin.ZendriveFinalPlugin" />
+    </feature>
+    </config-file>
+    <source-file src="src/android/ZendriveFinalPlugin.java" target-dir="src/com/zendrive/cordova/plugin" />
+    <source-file src="src/android/SDKNotificationProvider.java" target-dir="src/com/zendrive/cordova/plugin" />
+    <source-file src="src/android/NotificationUtility.java" target-dir="src/com/zendrive/cordova/plugin" />
+    <framework src="src/android/dependencies.gradle" custom="true" type="gradleReference" />
+  </platform>
 </plugin>

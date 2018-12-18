@@ -10,15 +10,15 @@ import ZendriveSDK
 import ZendriveSDK.Insurance
 
 @objc(ZendriveFinalPlugin) class ZendriveFinalPlugin: CDVPlugin, ZendriveDelegateProtocol {
-    
+
     @objc(setup:)
     func setup(command: CDVInvokedUrlCommand) {
         let configuration = ZendriveConfiguration()
         configuration.applicationKey = "app-key"
-        configuration.driverId = "driver-id"
+        configuration.driverId = command.arguments?[0] as! String
         configuration.driveDetectionMode = ZendriveDriveDetectionMode.autoOFF
         print("In setup function")
-        
+
         Zendrive.setup(with: configuration, delegate: self) { (success, error) in
             var pluginResult = CDVPluginResult.init()
             if (error == nil) {
@@ -31,7 +31,7 @@ import ZendriveSDK.Insurance
             self.commandDelegate.send(pluginResult, callbackId: command.callbackId)
         }
     }
-    
+
     @objc(teardown:)
     func teardown(command: CDVInvokedUrlCommand) {
         Zendrive.teardown(completionHandler: nil)
@@ -39,27 +39,27 @@ import ZendriveSDK.Insurance
         let pluginResult = CDVPluginResult.init(status: CDVCommandStatus_OK, messageAs: "Zendrive successfully toredown!")
         self.commandDelegate.send(pluginResult, callbackId: command.callbackId)
     }
-    
+
     @objc(startDrive:)
     func startDrive(command: CDVInvokedUrlCommand) {
-        Zendrive.startDrive("tracking-id")
+        Zendrive.startDrive(command.arguments?[0] as! String)
         print("Zendrive drive started.")
         let pluginResult = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: "Zendrive successfully started drive!")
         self.commandDelegate.send(pluginResult, callbackId: command.callbackId)
     }
-    
+
     @objc(stopDrive:)
     func stopDrive(command: CDVInvokedUrlCommand) {
-        Zendrive.stopDrive("tracking-id")
+        Zendrive.stopDrive(command.arguments?[0] as! String)
         print("Zendrive drive stopped.")
         let pluginResult = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: "Zendrive successfully stopped drive!")
         self.commandDelegate.send(pluginResult, callbackId: command.callbackId)
     }
-    
+
     @objc(startPeriod2:)
     func startPeriod2(command: CDVInvokedUrlCommand) {
         var error: NSError? = nil
-        ZendriveInsurance.startDrive(withPeriod2: "tracking-id", error: &error)
+        ZendriveInsurance.startDrive(withPeriod2: command.arguments?[0] as! String, error: &error)
         var pluginResult = CDVPluginResult.init()
         if (error == nil) {
             pluginResult = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: "Zendrive successfully started period 2!")
@@ -70,11 +70,11 @@ import ZendriveSDK.Insurance
         }
         self.commandDelegate.send(pluginResult, callbackId: command.callbackId)
     }
-    
+
     @objc(startPeriod3:)
     func startPeriod3(command: CDVInvokedUrlCommand) {
         var error: NSError? = nil
-        ZendriveInsurance.startDrive(withPeriod3: "tracking-id", error: &error)
+        ZendriveInsurance.startDrive(withPeriod3: command.arguments?[0] as! String, error: &error)
         var pluginResult = CDVPluginResult.init()
         if (error == nil) {
             pluginResult = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: "Zendrive successfully started period 3!")
@@ -85,7 +85,7 @@ import ZendriveSDK.Insurance
         }
         self.commandDelegate.send(pluginResult, callbackId: command.callbackId)
     }
-    
+
     @objc(stopPeriod:)
     func stopPeriod(command: CDVInvokedUrlCommand) {
         var error: NSError? = nil
@@ -101,4 +101,3 @@ import ZendriveSDK.Insurance
         self.commandDelegate.send(pluginResult, callbackId: command.callbackId)
     }
 }
-

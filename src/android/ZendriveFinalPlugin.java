@@ -11,6 +11,8 @@ import android.util.Log;
 
 import org.apache.cordova.*;
 import org.json.JSONArray;
+import org.json.JSONObject;
+import org.json.JSONException;
 
 public class ZendriveFinalPlugin extends CordovaPlugin {
 
@@ -19,7 +21,7 @@ public class ZendriveFinalPlugin extends CordovaPlugin {
 	}
 
 	@Override
-	public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) {
+	public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
 		if(action.equals("setup")) {
 			this.context = cordova.getActivity().getApplicationContext();
 			ZendriveConfiguration configuration = new ZendriveConfiguration("sdk-key-here", "test_id", ZendriveDriveDetectionMode.AUTO_OFF); //AUTO_ON if implementing period 1 insurance period as well
