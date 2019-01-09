@@ -11,8 +11,10 @@ import android.util.Log;
 
 import org.apache.cordova.*;
 import org.json.JSONArray;
+import org.json.JSONObject;
+import org.json.JSONException;
 
-public class ZendriveFinalPlugin extends CordovaPlugin {
+public class ZendriveFinalPlugin extends CordovaPlugin throws JSONException {
 
 	public void initialize(CordovaInterface cordova, CordovaWebView webView) {
 		super.initialize(cordova, webView);
