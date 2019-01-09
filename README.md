@@ -19,7 +19,7 @@ Basic Cordova plugin that wraps around Zendrive API function calls.
     jcenter()
   }
   dependencies {
-    compile 'com.zendrive.sdk.android:ZendriveSDK:5.5.2'
+    compile 'com.zendrive.sdk.android:ZendriveSDK:5.6.3'
   }
   
   android { 
